@@ -1,0 +1,6 @@
+/* src/index.css */
+body { font-family: Arial, sans-serif; margin: 20px; }
+.container { max-width: 900px; margin: 0 auto; }
+input, textarea { width: 100%; padding: 8px; margin: 6px 0 12px 0; box-sizing: border-box; }
+button { padding: 6px 12px; cursor: pointer; }
+table th, table td { text-align: left; }
