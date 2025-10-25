@@ -9,7 +9,7 @@ export default function LivroDetails() {
   const [livro, setLivro] = useState(null);
 
   useEffect(() => {
-    api.get(`/biblioteca/${id}`).then(res => setLivro(res.data)).catch(err => {
+    api.get(`/${id}`).then(res => setLivro(res.data)).catch(err => {
       console.error(err);
       alert('Erro ao buscar livro');
     });

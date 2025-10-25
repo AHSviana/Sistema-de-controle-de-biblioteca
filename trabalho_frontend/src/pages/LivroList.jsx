@@ -9,10 +9,11 @@ export default function LivroList() {
 
   async function fetchLivros() {
     try {
-      const res = await api.get('/biblioteca');
+      const res = await api.get('/');
       setLivros(res.data);
     } catch (err) {
-      console.error(err);
+      console.error('Erro ao buscar Livro',err);
+      if(err.response && err.response.status !== 200)
       alert('Erro ao carregar livros');
     }
   }
@@ -22,7 +23,7 @@ export default function LivroList() {
   async function handleDelete(id) {
     if (!confirm('Deseja remover este livro?')) return;
     try {
-      await api.delete(`/biblioteca/${id}`);
+      await api.delete(`/${id}`);
       setLivros(prev => prev.filter(l => l.id !== id));
     } catch (err) {
       console.error(err);

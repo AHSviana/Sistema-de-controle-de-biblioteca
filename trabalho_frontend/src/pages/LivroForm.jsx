@@ -14,7 +14,7 @@ export default function LivroForm() {
   useEffect(() => {
     if (id) {
       setLoading(true);
-      api.get(`/biblioteca/${id}`).then(res => setForm({
+      api.get(`/${id}`).then(res => setForm({
         titulo: res.data.titulo || '',
         autor: res.data.autor || '',
         isbn: res.data.isbn || '',
@@ -41,14 +41,14 @@ export default function LivroForm() {
         return;
       }
       if (id) {
-        await api.put(`/biblioteca/${id}`, {
+        await api.put(`/${id}`, {
           ...form,
           ano: form.ano ? Number(form.ano) : null,
           quantidade: Number(form.quantidade)
         });
         alert('Livro atualizado');
       } else {
-        await api.post('/biblioteca', {
+        await api.post('/', {
           ...form,
           ano: form.ano ? Number(form.ano) : null,
           quantidade: Number(form.quantidade)
