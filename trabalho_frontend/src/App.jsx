@@ -4,12 +4,12 @@ import { Routes, Route, Link } from 'react-router-dom';
 import LivroList from './pages/LivroList';
 import LivroForm from './pages/LivroForm';
 import LivroDetails from './pages/LivroDetalhes';
-import Header from './components/Header';
+import Headerhome from './components/headerhome';
 
 export default function App() {
   return (
     <div className="container">
-      <Header />
+      <Headerhome/>
       <Routes>
         <Route path="/" element={<LivroList />} />
         <Route path="/novo" element={<LivroForm />} />
