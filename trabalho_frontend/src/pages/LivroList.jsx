@@ -44,7 +44,7 @@ export default function LivroList() {
           <tbody>
             {livros.map(l => (
               <tr key={l.id}>
-                <td><Link to={`/biblioteca/${l.id}`}>{l.titulo}</Link></td>
+                <td><Link to={`livro/${l.id}`}>{l.titulo}</Link></td>
                 <td>{l.autor}</td>
                 <td>{l.ano ?? '-'}</td>
                 <td>{l.quantidade}</td>
